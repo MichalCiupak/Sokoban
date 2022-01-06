@@ -1,9 +1,11 @@
 import pygame
 from elements import Tile, Barrel, Spot
-from levels import *
 from player import Player
 
 element_size = 64
+screen_height = element_size*7
+screen_width = element_size*13
+
 
 class Map():
     def __init__(self, level_data, surface):
@@ -16,29 +18,28 @@ class Map():
         self.barrels = pygame.sprite.Group()
         self.spots = pygame.sprite.Group()
         self.player = pygame.sprite.GroupSingle()
-        for row_index,row in enumerate(layout):
-            for col_index,cell in enumerate(row):
+        for row_index, row in enumerate(layout):
+            for col_index, cell in enumerate(row):
                 if cell == "X":
                     x = col_index*element_size
                     y = row_index*element_size
-                    tile = Tile((x,y))
+                    tile = Tile((x, y))
                     self.tiles.add(tile)
                 if cell == "@":
                     x = col_index*element_size
                     y = row_index*element_size
-                    player = Player((x,y))
+                    player = Player((x, y))
                     self.player.add(player)
                 if cell == "B":
                     x = col_index*element_size
                     y = row_index*element_size
-                    barrel = Barrel((x,y))
+                    barrel = Barrel((x, y))
                     self.barrels.add(barrel)
                 if cell == "S":
                     x = col_index*element_size
                     y = row_index*element_size
-                    spot = Spot((x,y))
+                    spot = Spot((x, y))
                     self.spots.add(spot)
-
 
     def x_collision_wall(self):
         player = self.player.sprite
@@ -49,8 +50,6 @@ class Map():
                     player.rect.left = sprite.rect.right
                 elif player.direction.x > 0:
                     player.rect.right = sprite.rect.left
-
-
 
     def x_collision_barrel(self):
         player = self.player.sprite
@@ -79,7 +78,6 @@ class Map():
                 if not position == sprite.rect.right:
                     self.push.play()
 
-
     def y_collision_barrel(self):
         player = self.player.sprite
         for sprite in self.barrels.sprites():
@@ -107,7 +105,6 @@ class Map():
                 if not position == sprite.rect.bottom:
                     self.push.play()
 
-
     def y_collision_wall(self):
         player = self.player.sprite
         player.rect.y += player.direction.y
@@ -118,8 +115,6 @@ class Map():
                 elif player.direction.y > 0:
                     player.rect.bottom = sprite.rect.top
 
-
-
     def barrels_on_spot(self):
         counter = 0
         for sprite in self.barrels.sprites():
@@ -129,7 +124,6 @@ class Map():
         if counter == len(self.barrels):
             return "mainmenu"
         return "running"
-
 
     def run(self):
         self.player.update()

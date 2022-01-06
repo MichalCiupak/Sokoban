@@ -6,12 +6,7 @@ level_map1 = [
     "XX S  B    XX",
     "XX         XX",
     "XXXXXXXXXXXXX",
-
 ]
-
-tile_size = 64
-screen_height = tile_size*len(level_map1)
-screen_width = tile_size*len(level_map1[0])
 
 level_map2 = [
     "XXXXXXXXXXXXX",
@@ -21,7 +16,6 @@ level_map2 = [
     "XX    S BS XX",
     "XX         XX",
     "XXXXXXXXXXXXX",
-
 ]
 
 level_map3 = [
@@ -32,7 +26,6 @@ level_map3 = [
     "XXXXXXBXXXXXX",
     "XXXXXXSXXXXXX",
     "XXXXXXXXXXXXX",
-
 ]
 
 level_map4 = [
@@ -43,7 +36,6 @@ level_map4 = [
     "X@B  B XX  XX",
     "XSB      SSXX",
     "XXXXXXXXXXXXX",
-
 ]
 
 
@@ -55,8 +47,7 @@ level_map5 = [
     "X   X  XXB  X",
     "X  S S XX@  X",
     "XXXXXXXXXXXXX",
-
 ]
 
 
-levels_maps = [level_map1,level_map2,level_map3,level_map4,level_map5]
+levels_maps = [level_map1, level_map2, level_map3, level_map4, level_map5]
