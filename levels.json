@@ -1,53 +1,49 @@
-level_map1 = [
+{"level1" : [
     "XXXXXXXXXXXXX",
     "XX         XX",
     "XX    B    XX",
     "XX S    @  XX",
     "XX S  B    XX",
     "XX         XX",
-    "XXXXXXXXXXXXX",
-]
+    "XXXXXXXXXXXXX"
+],
 
-level_map2 = [
+"level2" : [
     "XXXXXXXXXXXXX",
     "XXXXXXX@XXXXX",
     "XXXXXXXBS  XX",
     "XX    B    XX",
     "XX    S BS XX",
     "XX         XX",
-    "XXXXXXXXXXXXX",
-]
+    "XXXXXXXXXXXXX"
+],
 
-level_map3 = [
+"level3" : [
     "XXXXXXXXXXXXX",
     "XXXXXSXXXXXXX",
     "XXXXXB B  SXX",
     "XXXS B@XXXXXX",
     "XXXXXXBXXXXXX",
     "XXXXXXSXXXXXX",
-    "XXXXXXXXXXXXX",
-]
+    "XXXXXXXXXXXXX"
+],
 
-level_map4 = [
+"level4" : [
     "XXXXXXXXXXXXX",
     "XXXXXXXXXXXXX",
     "XXXXXXXXXXXXX",
     "X X   XXXXXXX",
     "X@B  B XX  XX",
     "XSB      SSXX",
-    "XXXXXXXXXXXXX",
-]
+    "XXXXXXXXXXXXX"
+],
 
-
-level_map5 = [
+"level5" : [
     "XXXXXXXXXXXXX",
     "XXXXXXXXXXXXX",
     "X   XXXXXXXXX",
     "X X      B  X",
     "X   X  XXB  X",
     "X  S S XX@  X",
-    "XXXXXXXXXXXXX",
-]
-
-
-levels_maps = [level_map1, level_map2, level_map3, level_map4, level_map5]
+    "XXXXXXXXXXXXX"
+]}

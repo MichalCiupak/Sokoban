@@ -1,7 +1,6 @@
 import pygame
 from sys import exit
-from levels import levels_maps
-from map import Map, screen_height, screen_width
+from map import Map, screen_height, screen_width, levels_maps
 from menu import Menu, RestartMenu, MenuNextLevel, InitialMenu
 
 pygame.init()

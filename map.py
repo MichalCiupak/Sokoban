@@ -1,6 +1,14 @@
 import pygame
+import json
 from elements import Tile, Barrel, Spot
 from player import Player
+
+with open("levels.json", "r") as file_handle:
+    data = json.load(file_handle)
+
+levels_maps = []
+for value in data.values():
+    levels_maps.append(value)
 
 element_size = 64
 screen_height = element_size*7

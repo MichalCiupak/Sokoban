@@ -1,6 +1,6 @@
 import pygame
 from pygame.constants import K_ESCAPE
-from levels import levels_maps
+from map import levels_maps
 from map import screen_width
 
 
