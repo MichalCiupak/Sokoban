@@ -25,12 +25,6 @@ def test_create_restartmenu():
     assert menu
 
 
-def test_initialmenu_position():
-    menu = InitialMenu(screen)
-    menu.initial_menu()
-    assert menu.play_rect.center == (screen_width/2, 150)
-
-
 def test_menunextlevel_position():
     menu = MenuNextLevel(screen)
     menu.play_again()
