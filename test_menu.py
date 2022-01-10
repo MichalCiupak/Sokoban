@@ -1,6 +1,7 @@
 import pygame
 from map import screen_width
 from menu import Menu, InitialMenu, MenuNextLevel, RestartMenu
+
 pygame.font.init()
 screen = pygame.display.set_mode((screen_width, 1000))
 
