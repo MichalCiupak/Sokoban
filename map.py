@@ -14,6 +14,13 @@ element_size = 64
 screen_height = element_size*7
 screen_width = element_size*13
 
+game_states = {
+    "init": "initialmenu",
+    "run": "running",
+    "main": "mainmenu",
+    "restart": "restartmenu"
+}
+
 
 class Map():
     def __init__(self, level_data, surface):
@@ -50,6 +57,9 @@ class Map():
                     self.spots.add(spot)
 
     def x_collision_wall(self):
+        """
+        Calculates the player's x-axis position
+        """
         player = self.player.sprite
         player.rect.x += player.direction.x
         for sprite in self.tiles.sprites():
@@ -60,11 +70,14 @@ class Map():
                     player.rect.right = sprite.rect.left
 
     def x_collision_barrel(self):
+        """
+        Calculates the barrels's x-axies position
+        """
         player = self.player.sprite
         for sprite in self.barrels.sprites():
             if sprite.rect.colliderect(player.rect):
                 position = sprite.rect.right
-                sprite.rect.right += 32*player.direction.x
+                sprite.rect.right += element_size*player.direction.x/2
                 for other_sprite in self.tiles.sprites():
                     if sprite.rect.colliderect(other_sprite.rect):
                         if player.direction.x < 0:
@@ -87,11 +100,14 @@ class Map():
                     self.push.play()
 
     def y_collision_barrel(self):
+        """
+        Calculates the barrels's y-axies position
+        """
         player = self.player.sprite
         for sprite in self.barrels.sprites():
             if sprite.rect.colliderect(player.rect):
                 position = sprite.rect.bottom
-                sprite.rect.bottom += 32*player.direction.y
+                sprite.rect.bottom += element_size*player.direction.y/2
                 for other_sprite in self.tiles.sprites():
                     if sprite.rect.colliderect(other_sprite.rect):
                         if player.direction.y < 0:
@@ -114,6 +130,9 @@ class Map():
                     self.push.play()
 
     def y_collision_wall(self):
+        """
+        Calculates the player's y-axis position
+        """
         player = self.player.sprite
         player.rect.y += player.direction.y
         for sprite in self.tiles.sprites():
@@ -124,14 +143,17 @@ class Map():
                     player.rect.bottom = sprite.rect.top
 
     def barrels_on_spot(self):
+        """
+        Checks if all barrels are on spots
+        """
         counter = 0
         for sprite in self.barrels.sprites():
             for other_sprite in self.spots.sprites():
                 if other_sprite.rect.colliderect(sprite.rect):
                     counter += 1
         if counter == len(self.barrels):
-            return "mainmenu"
-        return "running"
+            return game_states["main"]
+        return game_states["run"]
 
     def run(self):
         self.player.update()

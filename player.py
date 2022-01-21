@@ -10,6 +10,9 @@ class Player(pygame.sprite.Sprite):
         self.direction = pygame.math.Vector2(0, 0)
 
     def animate(self):
+        """
+        Changes the player's horizontal orientation
+        """
         image = pygame.image.load("graphic/player.png")
         if self.facing_right:
             self.image = image
@@ -18,6 +21,9 @@ class Player(pygame.sprite.Sprite):
             self.image = flipped_image
 
     def get_input(self):
+        """
+        Gets input from the player
+        """
         keys = pygame.key.get_pressed()
         if keys[pygame.K_d]:
             self.facing_right = True

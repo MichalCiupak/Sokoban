@@ -1,29 +1,9 @@
 import pygame
 from map import screen_width
-from menu import Menu, InitialMenu, MenuNextLevel, RestartMenu
+from menu import InitialMenu, MenuNextLevel, RestartMenu
 
 pygame.font.init()
 screen = pygame.display.set_mode((screen_width, 1000))
-
-
-def test_create_menu():
-    menu = Menu(screen)
-    assert menu
-
-
-def test_create_initialmenu():
-    menu = InitialMenu(screen)
-    assert menu
-
-
-def test_create_nextlevelmenu():
-    menu = MenuNextLevel(screen)
-    assert menu
-
-
-def test_create_restartmenu():
-    menu = RestartMenu(screen)
-    assert menu
 
 
 def test_menunextlevel_position():
